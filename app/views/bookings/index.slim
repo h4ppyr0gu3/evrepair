@@ -1,0 +1,15 @@
+.container
+	h1 all the items
+
+	ul
+		li
+			- @bookings.each_with_index do |f, idx|
+				h1 Booking number 
+				= idx + 1
+				= f.id
+				= f.user_id
+				= f.booking_from
+			
+				= link_to "Delete", booking_path(f.id), method: :delete, class: "button is-primary"
+
+

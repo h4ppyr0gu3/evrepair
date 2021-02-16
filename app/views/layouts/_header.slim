@@ -1,0 +1,42 @@
+.container.m-5
+	.navbar role="navigation" aria-label="main navigation"
+		.navbar-brand
+			.navbar-item
+				= link_to "EVREPAIR", root_path, class: "h1"
+			.navbar-burger role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
+				span aria-hidden="true"
+				span aria-hidden="true"
+				span aria-hidden="true"
+		.navbar-menu
+			.navbar-start
+				.navbar-item Home
+				.navbar-item Documentation
+				.navbar-item.has-dropdown.is-hoverable
+					.navbar-link More
+						
+					
+					.navbar-dropdown
+							
+						= link_to "About", about_path, class: "navbar-item"
+							
+						= link_to "Contact us", contact_us_path, class: "navbar-item"
+							
+						.navbar-divider
+							- if user_signed_in?
+								= link_to "new booking", new_booking_path, class: "navbar-item"
+								- if current_user.bookings.any? 
+									= link_to "change booking", bookings_path, class: "navbar-item"
+			 
+			- if user_signed_in? 
+				.navbar-end
+					.navbar-item
+						.button.is-primary
+							= link_to "log out", destroy_user_session_path, method: :delete
+			- else
+				.navbar-end
+					.navbar-item
+						.button.is-primary
+							= link_to "Sign up", new_user_registration_path
+					.navbar-item
+						.button.is-light
+							= link_to "Log in", new_user_session_path

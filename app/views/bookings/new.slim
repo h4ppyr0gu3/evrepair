@@ -1,0 +1,14 @@
+
+.container
+	h1 welcome to bookings
+	= form_with url: bookings_path do |form|
+		= form.text_field :booking_from, class: "datepicker", type: "date", id: "datepicker"
+		= form.text_field :phone, class: "input"
+		= form.submit class: "button is-primary"
+
+
+
+
+= javascript_pack_tag 'calendar'
+/ .datepicker#my-element
+
