@@ -1,8 +1,9 @@
-.container.m-5
-	.navbar role="navigation" aria-label="main navigation"
+.navbar role="navigation" aria-label="main navigation"
+	.container
 		.navbar-brand
-			.navbar-item
-				= link_to "EVREPAIR", root_path, class: "h1"
+			.navbar-item.no-padding
+				= link_to root_path do 
+					= image_tag "logo_navbar.png", id: "navbar_logo"
 			.navbar-burger role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
 				span aria-hidden="true"
 				span aria-hidden="true"

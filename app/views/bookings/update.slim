@@ -1,0 +1,16 @@
+.container
+	h1 update attributes
+
+	= form_with method: :patch, url: booking_path, model: @update do |f|
+		= f.label :name, "Enter your name"
+		= f.text_field :name, class: "input"
+		= f.label :date, "Please select a date"
+		= f.text_field :booking_from, class: "datepicker", type: "date", id: "datepicker"
+		= f.label :phone, "Phone number"
+		= f.text_field :phone, class: "input"
+		= f.submit "update", class: "button is-primary"
+
+
+
+
+= javascript_pack_tag 'calendar'

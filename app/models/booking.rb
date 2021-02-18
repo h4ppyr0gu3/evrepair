@@ -6,4 +6,6 @@ class Booking < ApplicationRecord
 	enum status: [ :pending, :confirmed ]
 
 	validates :phone, phony_plausible: true
+	validates :user_id, presence: true
+	validates :name, presence: true
 end

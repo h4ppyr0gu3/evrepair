@@ -1,10 +1,23 @@
 
 .container
+	- flash.each do |type, message|
+		.notification class="is-#{type}"
+			= message 
+			
 	h1 welcome to bookings
 	= form_with url: bookings_path do |form|
+		= form.hidden_field :status, value: "1"
+		= form.label :name, "please enter your name"
+		= form.text_field :name, class: "input"
+		= form.label :date, "Please select a date"
 		= form.text_field :booking_from, class: "datepicker", type: "date", id: "datepicker"
+		= form.label :phone, "Phone number"
 		= form.text_field :phone, class: "input"
 		= form.submit class: "button is-primary"
+
+
+
+
 
 
 
