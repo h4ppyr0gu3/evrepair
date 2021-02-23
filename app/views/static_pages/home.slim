@@ -1,4 +1,74 @@
+.container
+	.columns
+		.column.is-8
+			= image_tag "ev-hood", class: ""
+		.column.is-4 
+			ul.text1.p-5 Book an appointment today!
+			.button.is-primari
+				= link_to "Book now", new_booking_path, class: "link"
+			
+	.columns.p-5.is-centered
+		.text1 What we offer
+	.columns.p-5
+		.column.is-4 
+			li.text2.p-5  in-depth computer diagnostics
+			li.text2.p-5  Mechanical repair and regular services
+		.column.is-2
+			.card#small_card
+				.small_svg
+					= image_tag "diagnostics.svg"
+					.text2 Diagnostics
+			.columns#spacer
+			.card#small_card
+				.svgcard
+					= image_tag "mechanics.svg"
+					.text2 Mechanics
 
-/colour F27405
-/.head-background
-	.text2 EV REPAIR
+		.column.is-2
+			.card#small_card
+				.small_svg
+					= image_tag "reviews.svg"
+					.text2 Reviews
+			.columns#spacer
+			.card#small_card
+				.small_svg
+					= image_tag "accesories.svg"
+					.text2 Accessories
+		.column.is-4
+			li.text2.p-5 see our reviews from other customers
+			li.text2.p-5 dealership for weird wires
+
+
+
+
+.slideshow-container
+
+	.myslides.fade
+		.numbertext 1 / 4
+		a href="https://liqui-moly.pl/"
+			= image_tag "liquimoly1.jpg"
+	.myslides.fade
+		.numbertext 2 / 4
+		a href="https://agdpro.pl/13-ladowanie-ev"
+			= image_tag "weird-wires1.jpg"
+	.myslides.fade
+		.numbertext 3 / 4
+		a href="https://liqui-moly.pl/"
+			= image_tag "liquimoly2.jpg"
+	.myslides.fade
+		.numbertext 4 / 4
+		a href="https://agdpro.pl/13-ladowanie-ev"
+			= image_tag "weird-wires2.jpg"
+
+	a.prev &#10094;
+	a.next &#10095;
+
+.dots style="text-align:center"
+	span.dot onclick="currentSlide(1)"
+	span.dot onclick="currentSlide(2)"
+	span.dot onclick="currentSlide(3)"
+	span.dot onclick="currentSlide(4)"
+
+
+= javascript_pack_tag 'slideshow'
+

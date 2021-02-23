@@ -7,7 +7,9 @@ class StaticPagesController < ApplicationController
 	end
 
 	def contact_us
+	end
 
+	def gallery
 	end
 
 end

@@ -1,9 +1,9 @@
-.navbar role="navigation" aria-label="main navigation"
+.navbar.is-transparent role="navigation" aria-label="main navigation"
 	.container
 		.navbar-brand
 			.navbar-item.no-padding
 				= link_to root_path do 
-					= image_tag "logo_navbar.png", id: "navbar_logo"
+					= image_tag "logo.png", id: "navbar_logo"
 			.navbar-burger role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
 				span aria-hidden="true"
 				span aria-hidden="true"
@@ -31,13 +31,13 @@
 			- if user_signed_in? 
 				.navbar-end
 					.navbar-item
-						.button.is-primary
-							= link_to "log out", destroy_user_session_path, method: :delete
+						.button.is-primari
+							= link_to "log out", destroy_user_session_path, method: :delete, class: "link"
 			- else
 				.navbar-end
 					.navbar-item
-						.button.is-primary
-							= link_to "Sign up", new_user_registration_path
+						.button.is-primari
+							= link_to "Sign up", new_user_registration_path, class: "link"
 					.navbar-item
 						.button.is-light
-							= link_to "Log in", new_user_session_path
+							= link_to "Log in", new_user_session_path, class: "link"
